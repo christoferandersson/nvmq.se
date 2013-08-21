@@ -1,0 +1,9 @@
+MONGOHQ_URL="mongodb://localhost/database"
+
+cookieSecret="very secret"
+
+facebookClientID="APP_ID"
+facebookClientSecret="APP_SECRET"
+facebookCallbackURL="http://localhost:5000/auth/facebook/callback"
+
+adminID="FACEBOOK_USER_ID"

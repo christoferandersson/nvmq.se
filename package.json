@@ -1,0 +1,15 @@
+{
+    "name": "nvmq",
+    "version": "0.0.1",
+    "dependencies": {
+        "express": "3.2.x",
+        "mongoose": "3.6.x",
+        "pagedown": "1.1.x",
+        "passport": "0.1.x",
+        "passport-facebook": "0.1.x"
+    },
+    "engines": {
+        "node": "0.8.x",
+        "npm": "1.2.x"
+    }
+}

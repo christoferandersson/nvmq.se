@@ -1,0 +1,332 @@
+@import url(fonts.css);
+
+/*html { position: relative; min-height: 100%; font-size:100%; }*/
+/*
+body { margin: 0 auto 8rem auto; padding:0 1em; max-width:40em;
+       font-family:'Open Sans'; color:#333; }
+*/
+body {
+  font-family:'Open Sans'; color:#333;
+}
+
+
+h1,h2,h3,h4,h5,h6 { line-height:1em; font-weight:300; }
+h1 { font-size:2.25em; }
+h2 { font-size:1.75em; }
+h3 { font-size:1.25em; }
+
+/* p, ul, ol { margin: 0.7em 0; } */
+
+/*#content p { text-align:justify; }*/
+
+a { color:#0088cc; text-decoration:none; }
+a:hover, a:focus { color:#005580; text-decoration:underline; }
+
+.MathJax { color: #444; } /* The font is so thick that it needs to be brighter to fit in. */
+
+.main-container {
+  position: absolute;
+  top: 0;
+  /*bottom: 2.5rem;*/
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.article-wrap {
+  background: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  z-index: 5;
+}
+
+.article-fadeout {
+  position: absolute;
+  bottom: 0;
+  left: 0; /* Only cover article element */
+  right: 15px; /* Don't overlap scrollbar */
+  height: 2rem;
+  z-index: 6;
+  background: gray;
+  background: -webkit-gradient(linear, center top, center bottom, from(rgba(255,255,255,0)), to(rgba(255,255,255,1)));
+}
+.article-fadeout.editing {
+  left: 50%;
+}
+
+.article {
+  padding: 0 1em;
+  margin: 0 auto;
+  max-width: 40em;
+}
+
+
+.article-title {
+  /*position: relative;*/
+  font-size: 275%;
+  font-weight: 300;
+  font-family: inherit;
+  outline: none;
+  margin: 2rem 0 1rem 0;
+  border: none;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+}
+.article-title:after {
+  position: absolute;
+  font-size: 12px;
+  right: 0;
+  bottom: -2rem;
+  color: #aaa;
+}
+
+.article-date {
+  margin-top: -1rem; text-align: right; font-size: 85%; color: #aaa; }
+
+.editor-wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 50%;
+}
+
+#editor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 16px;
+}
+
+/*Editing*/
+.article-wrap.editing {
+  left: 50%;
+}
+.article-wrap, .editor-wrap { transition: all 1s !important; }
+
+.separator {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: #888;
+  z-index: 99999;
+}
+
+.separator.editing {
+  width: 2px;
+  /*background: #eee;*/
+}
+
+
+.articles-wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+}
+
+.articles {
+  display: block;
+  margin: 0 auto;
+  padding: 0 1em;
+  max-width: 40em;
+}
+
+
+
+
+/* Modern Clean CSS Sticky Footer: http://mystrd.at/modern-clean-css-sticky-footer/ */
+/*footer       { position:absolute; left:0; bottom:0;   width:100%; }*/
+/*footer .wrap { position:absolute; left:0; bottom:1em; width:100%; text-align:center; font-size:0.8rem; }*/
+.footer-separator {
+  position: absolute;
+  left: 0;
+  bottom: 2.5rem;
+  height: 0.5rem;
+  width: 100%;
+  z-index: 99;
+  background: -webkit-gradient(linear, center bottom, center top, from(#fafafa), to(rgba(255,255,255,0)));
+}
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  /*text-align: center;*/
+  /*font-size: 0.8rem;*/
+  /*background: #fafafa;*/
+  height: 2.5rem;
+  padding: 0;
+  margin: 0;
+}
+.footer-inner {
+  position: absolute;
+  left: 0;
+  bottom: 0.25em;
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+}
+.footer p { margin: 0; }
+.footer a { color: inherit !important; }
+
+
+
+
+
+
+
+
+
+
+[contenteditable] { outline:none; }
+
+
+
+/* - SITE NAVIGATION - */
+
+/*#sidebar-left  { position:fixed; top:0; left:0;  margin:0; padding:0; }
+#sidebar-right { position:fixed; top:0; right:0; margin:0; padding:0; height:90%; }
+
+#site-nav, #last-updates, #toc { border:1px solid #eee; padding:0.7em 1em 0.7em 0; margin:1em; display:inline-block; border-radius:5px; }
+#site-nav ul, #last-updates ul { list-style-type:none; padding:0 0 0 1em; margin:0; }
+
+#last-updates { cursor:pointer; }
+#last-updates p { font-style:italic; margin:0; padding:0 0 0 1em; }
+#last-updates ul { padding-top:0.5em; }
+*/
+/* - END SITE NAVIGATION -  */
+
+
+
+/* - CONVENIENCE CLASSES - */
+
+.btn   { margin:0; padding:0 0.2em; color:inherit; font-family:inherit; }
+.muted { color: #999; }
+
+/* - END CONVENIENCE CLASSES -  */
+
+
+
+/* TOC */
+
+#toc { padding:0; margin:1em 1em 0 0; line-height:100%; max-height:100%; overflow:auto; text-align:left; width:15em; }
+#toc ul { margin:0; padding:0; list-style:none; }
+#toc li { padding:0.5em; margin:0; }
+#toc .tocify-focus { background-color:#f5f5f5; }
+#toc .sub-header .sub-header { text-indent:1em; font-size:90%; display:none; }
+#toc .sub-header .sub-header .sub-header { text-indent:2em; font-size:80%; }
+
+/* END TOC */
+
+
+
+/* - STYLING CODE - */
+
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic);
+.CodeMirror { font-family:'Ubuntu Mono', monospace; font-size:18px; height:inherit; }
+code     { color:inherit; font-family:'Ubuntu Mono', monospace;
+        /* padding:2px 3px; border:1px solid #e1e1e8; border-radius:5px; */ }
+pre code { padding:0;   border:none; }
+pre      { padding:1em; margin:1em -1em; }
+pre, pre code { white-space:pre; word-wrap:normal; background-color:#f0f0f0; /*background-clip:content-box;*/ }
+
+
+/* - - PRETTYPRINT COLORS - - */
+
+/* SPAN elements with the classes below are added by prettyprint. */
+.pln { color: #000; }  /* plain text */
+.str { color: #080; }  /* string content */
+.kwd { color: #008; }  /* a keyword */
+.com { color: #800; font-style: italic; }  /* a comment */
+.typ { color: #606; }  /* a type name */
+.lit { color: #066; }  /* a literal value */
+/* punctuation, lisp open bracket, lisp close bracket */
+.pun, .opn, .clo { color: #660 }
+.tag { color: #008; }  /* a markup tag name */
+.atn { color: #606; }  /* a markup attribute name */
+.atv { color: #080; }  /* a markup attribute value */
+.dec, .var { color: #606; }  /* a declaration; a variable name */
+.fun { color: red; }  /* a function name */
+
+/* Pretty printing styles. Used with prettify.js. */
+/* Vim sunburst theme by David Leibovic */
+/* pre .str, code .str { color: #65B042; } /\* string  - green *\/ */
+/* pre .kwd, code .kwd { color: #E28964; } /\* keyword - dark pink *\/ */
+/* pre .com, code .com { color: #AEAEAE; font-style: italic; } /\* comment - gray *\/ */
+/* pre .typ, code .typ { color: #89bdff; } /\* type - light blue *\/ */
+/* pre .lit, code .lit { color: #3387CC; } /\* literal - blue *\/ */
+/* pre .pun, code .pun { color: #fff; } /\* punctuation - white *\/ */
+/* pre .pln, code .pln { color: #fff; } /\* plaintext - white *\/ */
+/* pre .tag, code .tag { color: #89bdff; } /\* html/xml tag    - light blue *\/ */
+/* pre .atn, code .atn { color: #bdb76b; } /\* html/xml attribute name  - khaki *\/ */
+/* pre .atv, code .atv { color: #65B042; } /\* html/xml attribute value - green *\/ */
+/* pre .dec, code .dec { color: #3387CC; } /\* decimal - blue *\/ */
+
+/* - - END PRETTYPRINT COLORS - - */
+
+
+/* - END STYLING CODE - */
+
+
+
+/* - MISC - */
+
+#copyleft {
+  -webkit-transform: rotate(180deg);
+   -khtml-transform: rotate(180deg);
+     -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+            display: inline-block;
+}
+
+/* - END MISC -  */
+
+
+
+/* TESTING */
+
+hr { border:0; height:1px;
+    background-image: -webkit-linear-gradient(left, rgba(230,230,230,0), rgba(230,230,230,1) 30%, rgba(230,230,230,1) 70%, rgba(230,230,230,0));
+    background-image:    -moz-linear-gradient(left, rgba(230,230,230,0), rgba(230,230,230,1) 30%, rgba(230,230,230,1) 70%, rgba(230,230,230,0));
+    background-image:     -ms-linear-gradient(left, rgba(230,230,230,0), rgba(230,230,230,1) 30%, rgba(230,230,230,1) 70%, rgba(230,230,230,0));
+    background-image:      -o-linear-gradient(left, rgba(230,230,230,0), rgba(230,230,230,1) 30%, rgba(230,230,230,1) 70%, rgba(230,230,230,0));
+   }
+
+hr { border:0; height:1px;
+    background-image: -webkit-linear-gradient(left, rgba(230,230,230,0), rgba(230,230,230,1), rgba(230,230,230,0));
+    background-image:    -moz-linear-gradient(left, rgba(230,230,230,0), rgba(230,230,230,1), rgba(230,230,230,0));
+    background-image:     -ms-linear-gradient(left, rgba(230,230,230,0), rgba(230,230,230,1), rgba(230,230,230,0));
+    background-image:      -o-linear-gradient(left, rgba(230,230,230,0), rgba(230,230,230,1), rgba(230,230,230,0));
+   }
+
+/* END TESTING */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Debugging */
+
+/*.editor-wrap { border: 4px solid black; }*/
+/*#editor { border: 4px solid blue;}*/
+/*.article-wrap { border: 1px solid red;}*/

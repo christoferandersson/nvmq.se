@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf8">
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <title>Viktor Qvarfordt</title>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        messageStyle: "none",
+        tex2jax: {
+          inlineMath: [["$","$"],["\\(","\\)"]],
+          processEscapes: true
+        },
+        "HTML-CSS": {
+          availableFonts: ["TeX"]
+        },
+        TeX: {
+          // equationNumbers: { autoNumber: "AMS" },
+          Macros: {
+            vb: ["{\\bf #1}", 1]
+          }
+        }
+      });
+    </script>
+
+    <!-- SCRIPTS that should run asap -->
+    <!-- <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script> -->
+    <!-- / SCRIPTS -->
+
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" href="/static/codemirror-3.1/lib/codemirror.css"> -->
+    <!-- <link rel="stylesheet" href="/static/css/opentip.css"> -->
+    <link rel="stylesheet" href="/static/css/prettify.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <!-- / CSS -->
+
+  </head>
+
+  <!-- <body ng-app="app" ng-controller="MainCtrl"> -->
+  <body ng-app="app">
+
+    <div class="main-container" ng-view></div>
+
+    <!--
+    <div class="main-container">
+      <div class="editor-wrap" ng-class="{editing: editing}">test
+        <div id="editor"
+             ng-class="{editing: editing}"
+             ui-ace="{onLoad: aceLoaded}"
+             ng-model="article.body">
+        </div>
+      </div>
+      <div class="article-wrap" ng-class="{editing: editing}">
+        <div class="separator" ng-class="{editing: editing}"></div>
+        <div class="article">
+          <input class="article-title" ng-model="article.title" autocomplete="off">
+          <article class="article-body" ng-bind-html-unsafe="article.body | markdown"></article>
+        </div>
+      </div>
+      <!-- <div class="article-fadeout" ng-class="{editing: editing}"></div> --/>
+    </div>
+    -->
+
+    <!-- <div class="footer-separator"></div> -->
+    <!--
+    <div class="footer muted">
+      <div class="footer-inner">
+        <p><a href="http://en.wikipedia.org/wiki/Copyleft"><span id="copyleft">©</span> Copyleft</a> 2013 by <a href="http://www.google.com/recaptcha/mailhide/d?k=011_nhztwLvlc3pvv_XPxoCQ==&amp;c=yaAxGczoBoXOkK-PD5NvFIiC-kdpT7GNzgYMW8Sp3gQ=" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\075011_nhztwLvlc3pvv_XPxoCQ\75\75\46c\75yaAxGczoBoXOkK-PD5NvFIiC-kdpT7GNzgYMW8Sp3gQ\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" title="E-mail address hidden behind captcha.">Viktor Qvarfordt</a></p>
+        <p>Content licensed under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike License</a>.</p>
+      </div>
+    </div>
+    -->
+
+
+    <script type="text/ng-template" id="article.html">
+      <div class="editor-wrap" ng-class="{editing: editing}">test
+        <div id="editor"
+             ng-class="{editing: editing}"
+             ui-ace="{onLoad: aceLoaded}"
+             ng-model="article.body">
+        </div>
+      </div>
+      <div class="article-wrap" ng-class="{editing: editing}">
+        <div class="separator" ng-class="{editing: editing}"></div>
+        <div class="article">
+          <input class="article-title" ng-model="article.title" autocomplete="off">
+          <div class="article-date" ng-bind="article.date"></div>
+          <article class="article-body" ng-bind-html-unsafe="article.body | markdown" mathjax="article.body"></article>
+        </div>
+      </div>
+    </script>
+
+    <script type="text/ng-template" id="articles.html">
+      <div class="articles-wrap">
+        <div class="articles">
+          <h1 class="articles-title">Articles</h1>
+          <ul class="article-list">
+            <li ng-repeat="article in articles">
+              <a ng-href="{{article.urn}}" ng-bind="article.title"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </script>
+
+    <!-- Sidebars -->
+    <!-- <div id="sidebar-right"> -->
+      <!-- <div id="toc"></div> -->
+    <!-- </div> -->
+    <!-- <div id="sidebar-left"> -->
+      <!-- <div><nav id="site-nav"><%= site-nav %></nav></div> -->
+      <!-- <div><div id="last-updates"><p>last updates:</p></div></div> -->
+    <!-- </div> -->
+
+    <!-- SCRIPTS executed down here to optimize page load speed -->
+    <!-- <script src="/static/js/libs/prettify.js"></script> -->
+    <!-- <script src="/static/js/libs/prettify-lang-tex.js"></script> -->
+
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/1.0.0-rc.3/lodash.min.js"></script> -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.9/backbone-min.js"></script> -->
+
+    <!-- <script src="/static/codemirror-3.1/lib/codemirror.js"></script> -->
+    <!-- <script src="/static/codemirror-3.1/mode/xml/xml.js"></script> -->
+    <!-- <script src="/static/codemirror-3.1/mode/javascript/javascript.js"></script> -->
+    <!-- <script src="/static/codemirror-3.1/mode/css/css.js"></script> -->
+    <!-- <script src="/static/codemirror-3.1/mode/htmlmixed/htmlmixed.js"></script> -->
+    <!-- <script src="/static/codemirror-3.1/mode/markdown/markdown.js"></script> -->
+
+    <!-- <script src="/static/js/jquery.insert-from-url.js"></script> -->
+    <!-- <script src="/static/js/libs/opentip-jquery.min.js"></script> -->
+
+    <!-- <script src="/static/js/widget-wysiwyg-editor.js"></script> -->
+    <!-- <script src="/static/js/widget-code-editor.js"></script> -->
+    <!-- <script src="/static/js/widget-meta.js"></script> -->
+    <!-- <script src="/static/js/widget-status.js"></script> -->
+    <!-- <script src="/static/js/page.js"></script> -->
+
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"></script> -->
+    <!-- <script src="/static/js/jquery-ui-1.10.3.custom.min.js"></script> -->
+    <!-- <script src="/static/js/jquery.tocify.min.js"></script> -->
+
+    <!-- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+    <script type="text/javascript" src="/static/js/libs/Markdown.Converter.js"></script>
+    <script type="text/javascript" src="/static/vendor/ace-min-noconflict-2013-07-31/ace.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&delayStartupUntil=configured"></script>
+    <script type="text/javascript" src="/static/vendor/angular/angular-1.1.5.min.js"></script>
+    <script type="text/javascript" src="/static/vendor/angular-ui/angular-ui-ace-2013-08-09.js"></script>
+    <!-- Consider splitting main so that important stuff can run earlier than for example TOC. -->
+    <script src="/static/js/main.js"></script>
+    <!-- / SCRIPTS -->
+
+  </body>
+
+</html>
